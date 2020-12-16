@@ -1,0 +1,29 @@
+{
+  "scopeName": "source.tasklist",
+  "patterns": [
+    {
+      "match": "^(Image Name.+PID Session Name.+Session#.+Mem Usage Status.+User Name.+CPU Time Window Title)$",
+      "captures": {
+        "1": {
+          "name": "string"
+        }
+      }
+    },
+    {
+      "match": "^(========================= ======== ================ =========== ============ =============== ================================================== ============ ========================================================================)$",
+      "captures": {
+        "1": {
+          "name": "string"
+        }
+      }
+    },
+    {
+      "match": "^(?:.{25}\\s+)([0-9]+)",
+      "captures": {
+        "1": {
+          "name": "keyword"
+        }
+      }
+    }
+  ]
+}
